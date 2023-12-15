@@ -12,7 +12,7 @@ while not wlan.isconnected() and wlan.status() >= 0:
 wlan.status()
 wlan.ifconfig()
 print("IP = " + str(wlan.ifconfig()[0]))
-inpu = input("Receive or send[Y/N]: ")
+inpu = input("Receive or send[R/S]: ")
 
 def receivevalue():
     print("Receiving...")
@@ -44,9 +44,9 @@ def sendvalue(val):
         cl.close
         print("Error Connection Terminated")
         
-if inpu == "Y":
+if inpu == "R":
     print("Got " + str(receivevalue()))
-elif inpu == "N":
+elif inpu == "S":
     while True:
         sendvalue("value")
 else:
