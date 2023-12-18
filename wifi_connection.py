@@ -18,10 +18,10 @@ def receivevalue():
     print("Receiving...")
     ai = socket.getaddrinfo("ip", 80) #The other devices ip address
     addr = ai[0][-1]
-    s = socket.socket() # Open socket
+    s = socket.socket()
     s.connect(addr)
-    s.send(b"GET Data") # Send request
-    ss=str(s.recv(512)) # Store reply
+    s.send(b"GET Data")
+    ss=str(s.recv(512))
     s.close()
     time.sleep(0.2)
     
@@ -45,7 +45,8 @@ def sendvalue(val):
         print("Error Connection Terminated")
         
 if inpu == "R":
-    print("Got " + str(receivevalue()))
+    received = str(receivevalue())
+    print("Got " + received[1:])
 elif inpu == "S":
     while True:
         sendvalue("value")
