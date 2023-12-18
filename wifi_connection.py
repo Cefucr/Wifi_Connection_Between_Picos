@@ -50,4 +50,4 @@ elif inpu == "S":
     while True:
         sendvalue("value")
 else:
-    print("Dumbass")
+    print("Invalid input. Please try again.")
